@@ -27,20 +27,38 @@ class Application implements CommandLineRunner {
         SpringApplication.run(Application.class, args)
     }
 
+    // @Override
+    // void run(String... args) {
+    //     println("Rover is landed at " + controlCenter.landRover().getPositionName())
+    //     print("Enter your command: ")
+    //     Scanner scanner = new Scanner(System.in)
+    //     String line = scanner.nextLine()
+    //     try {
+    //         println("Rover is stopped at " + controlCenter.sendCommand(line).getPositionName())
+    //         DecimalFormat formatter = new DecimalFormat("##.00")
+    //         println("Total explored rate is " + formatter.format(controlCenter.calculateExploreRate()) + "%")
+    //     } catch (InvalidateCommandException invalidateCommandException) {
+    //         println("Cannot recognize the command: " + invalidateCommandException.getMessage())
+    //     } catch (RoverException roverException) {
+    //         println("Rover has problem: " + roverException.getMessage())
+    //     }
+    // }
+
     @Override
     void run(String... args) {
         println("Rover is landed at " + controlCenter.landRover().getPositionName())
-        print("Enter your command: ")
-        Scanner scanner = new Scanner(System.in)
-        String line = scanner.nextLine()
-        try {
-            println("Rover is stopped at " + controlCenter.sendCommand(line).getPositionName())
-            DecimalFormat formatter = new DecimalFormat("##.00")
-            println("Total explored rate is " + formatter.format(controlCenter.calculateExploreRate()) + "%")
-        } catch (InvalidateCommandException invalidateCommandException) {
-            println("Cannot recognize the command: " + invalidateCommandException.getMessage())
-        } catch (RoverException roverException) {
-            println("Rover has problem: " + roverException.getMessage())
+        if(args.length == 1) {
+            try {
+                println("Rover is stopped at " + controlCenter.sendCommand(args[0]).getPositionName())
+                DecimalFormat formatter = new DecimalFormat("##.00")
+                println("Total explored rate is " + formatter.format(controlCenter.calculateExploreRate()) + "%")
+            } catch (InvalidateCommandException invalidateCommandException) {
+                println("Cannot recognize the command: " + invalidateCommandException.getMessage())
+            } catch (RoverException roverException) {
+                println("Rover has problem: " + roverException.getMessage())
+            }
+        } else {
+            println("Please enter your command")
         }
     }
 }

@@ -20,6 +20,10 @@ configurations {
     }
 }
 
+jar {
+    enabled = false
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'junit:junit:4.12'
@@ -35,7 +39,7 @@ test {
     useJUnitPlatform()
 }
 
-task cucumber() {
+task inteTest() {
     dependsOn assemble, testClasses
     doLast {
         javaexec {
