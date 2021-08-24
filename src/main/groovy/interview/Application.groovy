@@ -3,7 +3,6 @@ package interview
 import interview.exceptions.InvalidateCommandException
 import interview.exceptions.RoverException
 import interview.services.ControlCenterIF
-import javafx.animation.ScaleTransition
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
@@ -31,7 +30,7 @@ class Application implements CommandLineRunner {
     @Override
     void run(String... args) {
         println("Rover is landed at " + controlCenter.landRover().getPositionName())
-        println("Enter your command: ")
+        print("Enter your command: ")
         Scanner scanner = new Scanner(System.in)
         String line = scanner.nextLine()
         try {

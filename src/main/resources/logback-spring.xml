@@ -17,10 +17,10 @@
     </appender>
     <!--TRACE, DEBUG, INFO, WARN, ERROR-->
     <root level="ERROR">
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="dailyRollingFileAppender"/>
     </root>
 
-    <logger name="interview.services" level="DEBUG">
+    <logger name="interview.services" level="ERROR">
         <appender-ref ref="dailyRollingFileAppender"/>
     </logger>
 
