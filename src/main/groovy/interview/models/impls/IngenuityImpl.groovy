@@ -37,7 +37,7 @@ class IngenuityImpl implements CopterIF {
         return exploreCells
     }
 
-    Cell exploreCell(int rowOffset, int columnOffset) {
+    private Cell exploreCell(int rowOffset, int columnOffset) {
         Cell cell = new Cell(currentPosition.row+rowOffset, currentPosition.column+columnOffset)
         if(Region.getInstance().getCellsSet().contains(cell)) {
             return cell
