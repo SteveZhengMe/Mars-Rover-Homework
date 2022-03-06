@@ -14,3 +14,4 @@ Feature: Landed, execute command, report explore coverage
     Examples:
       | row | column | command           | result | explored |
       | 17  | 8      | "FFFLFFRBBHFFFFF" | "11F"  | 2.88     |
+      | 17  | 9      | "FFFLFFRBBHFFFFF" | "11G"  | 2.88     |
