@@ -1,44 +1,100 @@
 # Mars-Rover-Homework
-This project is for a pre-interview homework of Sr. developer.
+This project is for a pre-interview homework for Sr. developer.
 
 ## I. Project Introduction
 
 ### Perseverance Rover Adventure
-The latest NASA Mars rover (Percy) had successfully landed on Mars was received on 18 February 2021. Percy has a similar design to its predecessor rover, Curiosity. One significant improvement is about carrying the mini-helicopter, Ingenuity.
+The latest Mars rover from NASA, nicknamed Percy, successfully landed on Mars on February 18th, 2021. Percy has a similar design to its predecessor, Curiosity, but carries an additional mini-helicopter called Ingenuity.
 
-You are the software engineer of Percy. Your task is to build a program to control him to explore a 625 square meter area. The area is spitted to 25 * 25 cells.
+You are a software engineer for Percy, tasked with building a program to explore a 625 square meter area divided into 25x25 cells.
 
-The rover might land anywhere in the area. After the landing, he will return you a coordinate (Such as t8) and always heading north. Then you can send him a command. There are five types of control (doesn't matter the uppercase or lowercase):
+It's important to note that the rover could potentially land in any part of the designated area. Once it has landed, it will provide you with a coordinate, such as "t8," and will always be heading north. At this point, you can issue commands to the rover using one of the five types of control available (note that the case of the commands does not matter).
 
 - F: move one step forward
 - B: move backward one step
-- L: turn left (90 Degree)
-- R: turn right (90 Degree)
-- H: Launch Ingenuity (When Ingenuity is flying, Percy can not move.)
+- L: turn left (90 Degrees)
+- R: turn right (90 Degrees)
+- H: Launch Ingenuity (Percy can not move when Ingenuity is flying.)
 
-Because of the bandwidth, the control center can only send the command once a time in a string. For example, if the order is: "FFFLFFRBBHFFFFF." The Roller will:
-- Go north (Forward) 3 steps
+Due to limited bandwidth, the Roller can only receive commands one at a time in a string format. For instance, if the command is "FFFLFFRBBHFFFFF," the Roller will:- Go north (Forward) 3 steps
 - Turn left
 - Go west (Forward) 2 steps
 - Turn right
 - Go south (Backward) 2 steps
 - Launch mini-helicopter
-- (When mini-helicopter is back), go north (Forward) 5 steps
+- (When the mini-helicopter is back), go north (Forward) 5 steps
+
+|   | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 3 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 5 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 6 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 9 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 10 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 11 |   |   |   |   | E |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 12 |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 13 |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 14 |   |   |   |   | X | X | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 15 |   |   |   |   | X |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 16 |   |   |   |   | X |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 17 |   |   |   |   |   |   | S |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 18 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 19 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 21 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 22 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 23 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 24 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 25 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
 
 (If Percy landed at h17. After the commands, it is at f11.)
 
 Exception:
-If the command causes the Roller to run outside the area, it will ignore it.
+If the Roller exceeds the designated area, it will disregard the commands and stopped at the edge.
 
-### The Task
+### Your Task
 
-Implement the Perseverance Roller class. When the roller object is created, return a random landed coordinate and print it out. When the Roller received a command, it returns the final coordinate. 
-For example, input “FFFLFFRBBHFFFFF,” return “f11.”
+Implement a class for the Perseverance Roller. The roller object returns a random landed coordinate upon creation and the final coordinate upon receiving a command. For example, input “FFFLFFRBBHFFFFF,” returns “f11.”
 
 ### Bonus Task
-Suppose the Roller can only explore the spot he stands and the mini-helicopter can explore the surrounding cells (9 cells). Write another function/method to return the percentage of the investigated area. 
 
-For example, in the above example, the percentage is:18/625 = 2.88%
+Write a function to calculate the percentage of the area explored by a Roller and a mini-helicopter. The Roller can only explore the spot it stands on, while the mini-helicopter can explore the surrounding nine cells.
+
+|   | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 2 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 3 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 4 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 5 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 6 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 7 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 8 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 9 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 10 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 11 |   |   |   |   | E |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 12 |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 13 |   |   |   |   | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 14 |   |   |   |   | X | X | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 15 |   |   |   | H | XH | H | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 16 |   |   |   | H | XH | H | X |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 17 |   |   |   | H | H | H | S |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 18 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 19 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 20 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 21 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 22 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 23 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 24 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+| 25 |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |
+
+For example, in the above example (FFFLFFRBBHFFFFF), the percentage is:18/625 = 2.88%
 - The yellow cell is from the Roller
 - The blue cells are from the mini-helicopter (launched at spot "X")
 
